@@ -1,27 +1,22 @@
-import React from 'react'; 
-import {AiFillLeftCircle} from "react-icons/ai";
+import React, { Component } from "react"
+import './App.css'
+export default class extends Component {
+  playAudio() {
+    const audioEl = document.getElementsByClassName("audio-element")[0]
+    audioEl.play()
+  }
 
-import './App.css';
-function App() {
-return (   < div className="main">
- 
-<div className="instrac"> 
+  render() {
+    return (
+      <div>
+        <button onClick={this.playAudio}>
+          <span>start game</span>
+        </button>
+        <audio className="audio-element">
+          <source src="https://www.fesliyanstudios.com/play-mp3/5256"></source>
+        </audio>
+      </div>
+    )
+  }
 
-<h1  class="instractions">Instructions</h1>
-
-<h3 >
-1-Click the cards to reveal a magic icon . 
-<br/>
-2- Memorize it so that you can match it to similar cards.           
-<br/>                                   
-3- Match all of the cards on the board to complete the level. 
-
-</h3>
-
-<AiFillLeftCircle/>
-</div>
-
-  </div>);
 }
-
-export default App;
